@@ -6,7 +6,7 @@
 ```
 dnf install httpd php php-dom php-mbstring php-gd php-pdo php-json php-xml php-zip php-curl php-mcrypt php-pear setroubleshoot-server bzip2 php-ldap php-mysqlnd mariadb mariadb-server mod_auth_kerb php-fpm
 ```
-**Настройка MySQL**
+***Настройка MySQL***
 
 3.Запускаем службу mariadb
 ```
@@ -23,7 +23,7 @@ mysql -u root –p
 ```
 ![alt text](./Pictures/Screenshot_1.jpg)
 
-**Установка Nextcloud**
+***Установка Nextcloud***
 5.Устанавливаем nectcloud
  ```
 dnf install nextcloud nextcloud-httpd nextcloud-mysql
@@ -37,5 +37,11 @@ dnf install nextcloud nextcloud-httpd nextcloud-mysql
 ![alt text](./Pictures/Screenshot_4.jpg)
 * После окончания установки откроется интерфейс 
 ![alt text](./Pictures/Screenshot_5.jpg)
-9. **Установка SSL сертификата**
+9. ***Установка SSL сертификата***
+* Добавляем DNS запись в файл hosts  
+# echo 172.16.64.170 kit.ru > /etc/hosts
+ * Создаем корневой закрытый ключ 
+# openssl genpkey -algorithm RSA -out rootCA.key -aes-128-cbc
+ * Открытый ключ 
+# openssl req -x509 -new -key rootCA.key -sha256 -days 365 -out rootCA.crt 
 
