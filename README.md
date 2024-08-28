@@ -30,5 +30,5 @@ dnf install nextcloud nextcloud-httpd nextcloud-mysql
 ```
 6. Создаём виртуальный хост в файле *etc/httpd/conf.d/nextcloud.conf.*
 7. Редактируем */usr/share/nextcloud/config/config.php*
-8. ![alt text](./Pictures/Screenshot_2.jpg)
+ ![alt text](./Pictures/Screenshot_2.jpg)
 
