@@ -92,5 +92,25 @@ cp  rootCA.crt kit.ru.crt  /etc/ssl/certs
 ```
 ![image](https://github.com/user-attachments/assets/509105a0-8bac-41f4-a62b-b9dd7a6e1c5b)
 
+ * Перезапускаем службы и проверим что все работает.
+ * Так как не было цели организовывать доступ из вне, DNS не настроены*
+
+![image](https://github.com/user-attachments/assets/68916ad1-53a1-4235-b28e-098878d85b94)
+
+10. ***UFW***
+    
+* Открываем 80,443,22, порт остальные закрываем для внешних сетей и открываем из локальной 
+```
+ ufw default deny incoming
+```
+```
+ ufw default allow outgoing
+```
+```
+ ufw allow ssh,ufw allow http,ufw allow https
+```
+![image](https://github.com/user-attachments/assets/251f128f-825b-4f0a-a91e-41048bc7c90e)
+
+
 
 
