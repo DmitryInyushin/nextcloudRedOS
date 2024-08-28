@@ -181,7 +181,9 @@ nano /etc/ansible/playbooks/install_Zabbix_agent.yml
 * Добавляем Nextcloud в Zabbix для мониторинга и убеждаемся что agent передает данные с сервера
 
 
-  ![image](https://github.com/user-attachments/assets/28e74908-1479-47f8-b542-4efe9cfa09e9)
+![image](https://github.com/user-attachments/assets/28e74908-1479-47f8-b542-4efe9cfa09e9)
 
 
- ![image](https://github.com/user-attachments/assets/7b8913e3-7c8d-46c3-85b0-856f1fc030ba)
+![image](https://github.com/user-attachments/assets/7b8913e3-7c8d-46c3-85b0-856f1fc030ba)
+
+*на этом все*
