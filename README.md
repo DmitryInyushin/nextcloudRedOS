@@ -6,6 +6,8 @@
 ```
 dnf install httpd php php-dom php-mbstring php-gd php-pdo php-json php-xml php-zip php-curl php-mcrypt php-pear setroubleshoot-server bzip2 php-ldap php-mysqlnd mariadb mariadb-server mod_auth_kerb php-fpm
 ```
+*Настройка MySQL*
+
 3.Запускаем службу mariadb
 ```
 sudo systemctl start mariadb && systemctl enable mariadb
