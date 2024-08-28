@@ -37,3 +37,5 @@ dnf install nextcloud nextcloud-httpd nextcloud-mysql
 ![alt text](./Pictures/Screenshot_4.jpg)
 * После окончания установки откроется интерфейс 
 ![alt text](./Pictures/Screenshot_5.jpg)
+9. *Установка SSL сертификата*
+
