@@ -1,12 +1,12 @@
 # NextcloudRedOS
-*Oблако Nextcloud на системе RedOS*
+**Oблако Nextcloud на системе RedOS**
 1. На время установки отключаем SELinux в файле */etc/selinux/config*
 Меняем ```SELINUX=enforcing на SELINUX=permissive```
 2. устанавливаем необходимые пакеты 
 ```
 dnf install httpd php php-dom php-mbstring php-gd php-pdo php-json php-xml php-zip php-curl php-mcrypt php-pear setroubleshoot-server bzip2 php-ldap php-mysqlnd mariadb mariadb-server mod_auth_kerb php-fpm
 ```
-*Настройка MySQL*
+**Настройка MySQL**
 
 3.Запускаем службу mariadb
 ```
@@ -23,7 +23,7 @@ mysql -u root –p
 ```
 ![alt text](./Pictures/Screenshot_1.jpg)
 
-*Установка Nextcloud*
+**Установка Nextcloud**
 5.Устанавливаем nectcloud
  ```
 dnf install nextcloud nextcloud-httpd nextcloud-mysql
@@ -37,5 +37,5 @@ dnf install nextcloud nextcloud-httpd nextcloud-mysql
 ![alt text](./Pictures/Screenshot_4.jpg)
 * После окончания установки откроется интерфейс 
 ![alt text](./Pictures/Screenshot_5.jpg)
-9. *Установка SSL сертификата*
+9. **Установка SSL сертификата**
 
