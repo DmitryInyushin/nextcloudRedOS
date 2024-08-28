@@ -90,6 +90,7 @@ cp  rootCA.crt kit.ru.crt  /etc/ssl/certs
 ```
  apachectl configtest
 ```
-![image](https://github.com/user-attachments/assets/38c95bd7-ec7a-422f-8027-4e0207129c48)
+![image](https://github.com/user-attachments/assets/509105a0-8bac-41f4-a62b-b9dd7a6e1c5b)
+
 
 
