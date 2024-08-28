@@ -39,9 +39,14 @@ dnf install nextcloud nextcloud-httpd nextcloud-mysql
 ![alt text](./Pictures/Screenshot_5.jpg)
 9. ***Установка SSL сертификата***
 * Добавляем DNS запись в файл hosts  
-# echo 172.16.64.170 kit.ru > /etc/hosts
- * Создаем корневой закрытый ключ 
-# openssl genpkey -algorithm RSA -out rootCA.key -aes-128-cbc
+```
+ echo 172.16.64.170 kit.ru > /etc/hosts
+```
+* Создаем корневой закрытый ключ 
+```
+openssl genpkey -algorithm RSA -out rootCA.key -aes-128-cbc
+```
  * Открытый ключ 
-# openssl req -x509 -new -key rootCA.key -sha256 -days 365 -out rootCA.crt 
-
+```
+openssl req -x509 -new -key rootCA.key -sha256 -days 365 -out rootCA.crt 
+```
