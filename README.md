@@ -137,10 +137,51 @@ dnf install burp-client
 
 ![image](https://github.com/user-attachments/assets/e3aa609e-0b68-4b9d-a892-e64715aad257)
 
+12. ***Установка Zabbix-agent средствами Ansible***
+ *Ansible*
+* Настраиваем на удаленном сервере подключение к nectcloud в файле */etc/ansible/host*
+```
+   [nextcloud]
+  172.16.64.195 
+```
+* Генерим ssh ключи для подключения к серверу
+```
+   ssh-keygen -C "$(whoami)@$(hostname)-$(date -I)"
+```
+* Передаем ключ клиенту  
+```
+ssh-copy-id root@172.16.64.195
+```
+* Проверяем подключение
+```
+  ansible nextcloud -m ping
+```
+
+![image](https://github.com/user-attachments/assets/de6621d0-0b13-4889-9a4a-d7a46510f3b0)
+
+13. Создаем свой playbooks для установки Zabbix-agent  */etc/ansible/playbooks*
+```
+nano /etc/ansible/playbooks/install_Zabbix_agent.yml
+```
+
+![image](https://github.com/user-attachments/assets/3f5ba34b-bcf1-4b02-bae6-69d07668e49e)
 
 
+* Запускаем созданный playbooks
+```
+   ansible-playbook /etc/ansible/playbooks/install_Zabbix_agent.yml
+```
+
+![image](https://github.com/user-attachments/assets/d255b9e1-b808-4b7c-99b7-3275e66d84fa)
+
+* После завершения установки проверяем агент 
+
+![image](https://github.com/user-attachments/assets/7db9d3da-5cc9-4814-851b-4d45d02fcbe3)
+
+* Добавляем Nextcloud в Zabbix для мониторинга и убеждаемся что agent передает данные с сервера
 
 
+  ![image](https://github.com/user-attachments/assets/28e74908-1479-47f8-b542-4efe9cfa09e9)
 
 
-
+ ![image](https://github.com/user-attachments/assets/7b8913e3-7c8d-46c3-85b0-856f1fc030ba)
