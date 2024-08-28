@@ -82,6 +82,7 @@ cp  rootCA.crt kit.ru.crt  /etc/ssl/certs
 ```
 * Устанавливаем пакет mod_ssl
 * Редактируем файл   */etc/httpd/conf/httpd.conf*
-*ServerName ckit.ru*    *раскомментировать строку и указать имя сервера*
-*LoadModule ssl_module modules/mod_ssl.so*     *добавить строку в конец файла*
+*ServerName ckit.ru*    раскомментировать строку и указать имя сервера
+*LoadModule ssl_module modules/mod_ssl.so*     добавить строку в конец файла ![image](https://github.com/user-attachments/assets/d0a1c3ce-5fe9-41ce-99e9-37bdc4286956)
+
 
