@@ -33,8 +33,6 @@ dnf install nextcloud nextcloud-httpd nextcloud-mysql
  ![alt text](./Pictures/Screenshot_2.jpg)
  ![alt text](./Pictures/Screenshot_3.jpg)
 8. В браузере переходим на *http://172.16.64.195/nextcloud*
-Указываем ранее установленные данные и устанавливаем облако 
-
-После окончания установки откроется интерфейс 
-![image](https://github.com/user-attachments/assets/f413e3da-225c-42ce-a0ce-5528b07293c5)
+.Указываем ранее установленные данные и устанавливаем облако 
+.После окончания установки откроется интерфейс 
 
