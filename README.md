@@ -19,7 +19,4 @@ sudo mysql_secure_installation
 ```
 mysql -u root –p
 ```
-![image](https://github.com/user-attachments/assets/095aa305-e016-4aa7-8a85-e18155577a0e)
-
-
 ![alt text](./Pictures/Screenshot_1.jpg)
