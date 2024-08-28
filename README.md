@@ -1,5 +1,5 @@
 # NextcloudRedOS
-**Oблако Nextcloud на системе RedOS**
+***Oблако Nextcloud на системе RedOS***
 1. На время установки отключаем SELinux в файле */etc/selinux/config*
 Меняем ```SELINUX=enforcing на SELINUX=permissive```
 2. устанавливаем необходимые пакеты 
