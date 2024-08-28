@@ -110,6 +110,33 @@ cp  rootCA.crt kit.ru.crt  /etc/ssl/certs
  ufw allow ssh,ufw allow http,ufw allow https
 ```
 ![image](https://github.com/user-attachments/assets/251f128f-825b-4f0a-a91e-41048bc7c90e)
+11. ***Burp***
+* Устанавливаем burp на клиенте с которого хотим снимать бекап
+```
+dnf install burp-client 
+```
+* У станавливаем сервер 
+```
+# dnf install burp-server  на удаленном сервере 
+```
+* Устанавливаем зависимости
+```
+ dnf install uthash-devel make gcc librsync-devel openssl-devel libacl-devel ncurses-devel zlib-devel autoconf automake libtool
+```
+
+* Настраиваем подключение на клиенте
+![image](https://github.com/user-attachments/assets/dbd1777b-24cb-4f70-8a70-8a818b02e751)
+
+*  сервере в файле */etc/burp/burp.conf*
+*  ![image](https://github.com/user-attachments/assets/907e8f2f-6f2b-41a3-bc51-ce3a8e97bba6)
+
+* добавляем задачу в cron и проверяем
+* *MAILTO="" 0,20,31 * * * * root /usr/sbin/burp -a b*
+* ![image](https://github.com/user-attachments/assets/e3aa609e-0b68-4b9d-a892-e64715aad257)
+
+* ![image](https://github.com/user-attachments/assets/c4a0a63b-1c1c-452b-a14b-c3ef43f5656c)
+
+
 
 
 
