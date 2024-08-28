@@ -1,6 +1,6 @@
 # NextcloudRedOS
 *Oблако Nextcloud на системе RedOS*
-1. На время установки отключаем SELinux в файле ```/etc/selinux/config```
+1. На время установки отключаем SELinux в файле */etc/selinux/config*
 Меняем ```SELINUX=enforcing на SELINUX=permissive```
 2. устанавливаем необходимые пакеты 
 ```
@@ -28,8 +28,7 @@ mysql -u root –p
  ```
 dnf install nextcloud nextcloud-httpd nextcloud-mysql
 ```
-6.Создаём виртуальный хост в файле  
-  .etc/httpd/conf.d/nextcloud.conf.
-7. Редактируем 
- /usr/share/nextcloud/config/config.php
+6. Создаём виртуальный хост в файле *etc/httpd/conf.d/nextcloud.conf.*
+7. Редактируем */usr/share/nextcloud/config/config.php*
+8. ![alt text](./Pictures/Screenshot_2.jpg)
 
