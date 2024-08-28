@@ -50,7 +50,7 @@ openssl genpkey -algorithm RSA -out rootCA.key -aes-128-cbc
 ```
 openssl req -x509 -new -key rootCA.key -sha256 -days 365 -out rootCA.crt 
 ```
-![alt text](./Pictures/Screenshot_6.jpg)
+* ![alt text](./Pictures/Screenshot_6.jpg)
 
 * Создаем файл kit.ru
 * Создаем закрытый ключ
@@ -65,7 +65,7 @@ openssl req -x509 -new -key rootCA.key -sha256 -days 365 -out rootCA.crt
 ```
  openssl x509 -req -days 365 -CA rootCA.crt -CAkey rootCA.key -extfile kit.ru.cnf -extensions req_ext -in kit.csr -out kit.ru.crt
 ```
-![alt text](./Pictures/Screenshot_7.jpg)
+* ![alt text](./Pictures/Screenshot_7.jpg)
 * Создаем директорию и кладем в нее сертификаты 
 ```
   mkdir /etc/ssl/private
@@ -90,12 +90,12 @@ cp  rootCA.crt kit.ru.crt  /etc/ssl/certs
 ```
  apachectl configtest
 ```
-![image](https://github.com/user-attachments/assets/509105a0-8bac-41f4-a62b-b9dd7a6e1c5b)
+* ![image](https://github.com/user-attachments/assets/509105a0-8bac-41f4-a62b-b9dd7a6e1c5b)
 
  * Перезапускаем службы и проверим что все работает.
  * Так как не было цели организовывать доступ из вне, DNS не настроены*
 
-![image](https://github.com/user-attachments/assets/68916ad1-53a1-4235-b28e-098878d85b94)
+* ![image](https://github.com/user-attachments/assets/68916ad1-53a1-4235-b28e-098878d85b94)
 
 10. ***UFW***
     
@@ -109,7 +109,7 @@ cp  rootCA.crt kit.ru.crt  /etc/ssl/certs
 ```
  ufw allow ssh,ufw allow http,ufw allow https
 ```
-![image](https://github.com/user-attachments/assets/251f128f-825b-4f0a-a91e-41048bc7c90e)
+* ![image](https://github.com/user-attachments/assets/251f128f-825b-4f0a-a91e-41048bc7c90e)
 11. ***Burp***
 * Устанавливаем burp на клиенте с которого хотим снимать бекап
 ```
@@ -126,16 +126,16 @@ dnf install burp-client
 
 * Настраиваем подключение на клиенте
 
-![image](https://github.com/user-attachments/assets/dbd1777b-24cb-4f70-8a70-8a818b02e751)
+* ![image](https://github.com/user-attachments/assets/dbd1777b-24cb-4f70-8a70-8a818b02e751)
 
 * сервере в файле */etc/burp/burp.conf*
   
-![image](https://github.com/user-attachments/assets/907e8f2f-6f2b-41a3-bc51-ce3a8e97bba6)
+* ![image](https://github.com/user-attachments/assets/907e8f2f-6f2b-41a3-bc51-ce3a8e97bba6)
 
 * добавляем задачу в cron и проверяем
 * *MAILTO="" 0,20,31 * * * * root /usr/sbin/burp -a b*
 
-![image](https://github.com/user-attachments/assets/e3aa609e-0b68-4b9d-a892-e64715aad257)
+* ![image](https://github.com/user-attachments/assets/e3aa609e-0b68-4b9d-a892-e64715aad257)
 
 12. ***Установка Zabbix-agent средствами Ansible***
  *Ansible*
@@ -157,14 +157,14 @@ ssh-copy-id root@172.16.64.195
   ansible nextcloud -m ping
 ```
 
-![image](https://github.com/user-attachments/assets/de6621d0-0b13-4889-9a4a-d7a46510f3b0)
+* ![image](https://github.com/user-attachments/assets/de6621d0-0b13-4889-9a4a-d7a46510f3b0)
 
 13. Создаем свой playbooks для установки Zabbix-agent  */etc/ansible/playbooks*
 ```
 nano /etc/ansible/playbooks/install_Zabbix_agent.yml
 ```
 
-![image](https://github.com/user-attachments/assets/3f5ba34b-bcf1-4b02-bae6-69d07668e49e)
+* ![image](https://github.com/user-attachments/assets/3f5ba34b-bcf1-4b02-bae6-69d07668e49e)
 
 
 * Запускаем созданный playbooks
@@ -172,18 +172,18 @@ nano /etc/ansible/playbooks/install_Zabbix_agent.yml
    ansible-playbook /etc/ansible/playbooks/install_Zabbix_agent.yml
 ```
 
-![image](https://github.com/user-attachments/assets/d255b9e1-b808-4b7c-99b7-3275e66d84fa)
+* ![image](https://github.com/user-attachments/assets/d255b9e1-b808-4b7c-99b7-3275e66d84fa)
 
 * После завершения установки проверяем агент 
 
-![image](https://github.com/user-attachments/assets/7db9d3da-5cc9-4814-851b-4d45d02fcbe3)
+* ![image](https://github.com/user-attachments/assets/7db9d3da-5cc9-4814-851b-4d45d02fcbe3)
 
 * Добавляем Nextcloud в Zabbix для мониторинга и убеждаемся что agent передает данные с сервера
 
 
-![image](https://github.com/user-attachments/assets/28e74908-1479-47f8-b542-4efe9cfa09e9)
+* ![image](https://github.com/user-attachments/assets/28e74908-1479-47f8-b542-4efe9cfa09e9)
 
 
-![image](https://github.com/user-attachments/assets/7b8913e3-7c8d-46c3-85b0-856f1fc030ba)
+* ![image](https://github.com/user-attachments/assets/7b8913e3-7c8d-46c3-85b0-856f1fc030ba)
 
 *на этом все*
