@@ -24,7 +24,7 @@ mysql -u root –p
 ![alt text](./Pictures/Screenshot_1.jpg)
 
 ***Установка Nextcloud***
-5.Устанавливаем nectcloud
+5. Устанавливаем nectcloud
  ```
 dnf install nextcloud nextcloud-httpd nextcloud-mysql
 ```
@@ -50,3 +50,38 @@ openssl genpkey -algorithm RSA -out rootCA.key -aes-128-cbc
 ```
 openssl req -x509 -new -key rootCA.key -sha256 -days 365 -out rootCA.crt 
 ```
+![alt text](./Pictures/Screenshot_6.jpg)
+
+* Создаем файл kit.ru
+* Создаем закрытый ключ
+```
+ openssl genpkey -algorithm RSA –out kit.ru.key
+```
+* Запрос на ключ 
+```
+ openssl req -new -key kit.ru.key -config kit.cnf -reqexts req_ext -out kit.ru.csr
+```
+* Генерим сертификат 
+```
+ openssl x509 -req -days 365 -CA rootCA.crt -CAkey rootCA.key -extfile kit.ru.cnf -extensions req_ext -in kit.csr -out kit.ru.crt
+```
+![alt text](./Pictures/Screenshot_7.jpg)
+* Создаем директорию и кладем в нее сертификаты 
+```
+  mkdir /etc/ssl/private
+```
+```
+cp  rootCA.crt kit.ru.crt  /etc/ssl/certs
+```
+```
+ cp kit.key /etc/ssl/private
+```
+* Добавляем сертификаты в системное хранилище 
+```
+ cp  rootCA.crt kit.ru.crt /etc/pki/ca-trust/source/anchors/
+```
+* Устанавливаем пакет mod_ssl
+* Редактируем файл   */etc/httpd/conf/httpd.conf*
+*ServerName ckit.ru*    *раскомментировать строку и указать имя сервера*
+*LoadModule ssl_module modules/mod_ssl.so*     *добавить строку в конец файла*
+
