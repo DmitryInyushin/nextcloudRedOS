@@ -22,3 +22,14 @@ sudo mysql_secure_installation
 mysql -u root –p
 ```
 ![alt text](./Pictures/Screenshot_1.jpg)
+
+*Установка Nextcloud*
+5.Устанавливаем nectcloud
+ ```
+dnf install nextcloud nextcloud-httpd nextcloud-mysql
+```
+6.Создаём виртуальный хост в файле  
+  .etc/httpd/conf.d/nextcloud.conf.
+7. Редактируем 
+ /usr/share/nextcloud/config/config.php
+
